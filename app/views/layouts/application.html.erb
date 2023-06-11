@@ -16,7 +16,11 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
-    <%= yield %>
+    <%= render 'home/header' %>
+    <div class="container">
+      <br/>
+      <%= yield %>
+    </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
