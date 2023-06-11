@@ -1,0 +1,42 @@
+<%= form_with(model: operation) do |form| %>
+  <% if operation.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(operation.errors.count, "error") %> prohibited this operation from being saved:</h2>
+
+      <ul>
+        <% operation.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :sum, style: "display: block" %>
+    <%= form.text_field :sum %>
+  </div>
+
+  <div>
+    <%= form.label :date, style: "display: block" %>
+    <%= form.date_field :date %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div>
+    <%= form.label :type, style: "display: block" %>
+    <%= form.check_box :type %>
+  </div>
+
+  <div>
+    <%= form.label :category_id, style: "display: block" %>
+    <%= form.text_field :category_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
