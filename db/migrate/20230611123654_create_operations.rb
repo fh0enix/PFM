@@ -4,7 +4,7 @@ class CreateOperations < ActiveRecord::Migration[7.0]
       t.float :sum
       t.date :date
       t.string :description
-      t.boolean :type
+      t.boolean :spend_earn
       t.references :category, null: false, foreign_key: true
 
       t.timestamps
