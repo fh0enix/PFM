@@ -1,27 +1,22 @@
 <div id="<%= dom_id operation %>">
   <p>
-    <strong>Sum:</strong>
+    <strong>категорія:</strong>
+    <%= operation.category.name %>
+  </p>
+  <p>
+    <strong>тип:</strong>
+    <%= operation.spend_earn == true ? 'Дохід' : 'Витрата' %>
+  </p>
+  <p>
+    <strong>сума</strong>
     <%= operation.sum %>
   </p>
-
   <p>
-    <strong>Date:</strong>
-    <%= operation.date %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
+    <strong>опис:</strong>
     <%= operation.description %>
   </p>
-
   <p>
-    <strong>Type:</strong>
-    <%= operation.type %>
+    <strong>дата</strong>
+    <%= operation.date %>
   </p>
-
-  <p>
-    <strong>Category:</strong>
-    <%= operation.category_id %>
-  </p>
-
 </div>

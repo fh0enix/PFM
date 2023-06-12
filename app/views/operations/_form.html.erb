@@ -12,13 +12,22 @@
   <% end %>
 
   <div>
-    <%= form.label :sum, style: "display: block" %>
-    <%= form.text_field :sum %>
+    <%= select(:operation, :category_id, @category_options) %>
   </div>
 
   <div>
-    <%= form.label :date, style: "display: block" %>
-    <%= form.date_field :date %>
+    <%= label :spend_earn, "Витрата", value: false %>
+    <%= form.radio_button :spend_earn, false, :checked => true, :value => false %>
+  </div>
+
+    <div>
+    <%= label :spend_earn, "Дохід", value: true %>
+    <%= form.radio_button :spend_earn, true, :value => true %>
+  </div>
+
+  <div>
+    <%= form.label :sum, style: "display: block" %>
+    <%= form.text_field :sum %>
   </div>
 
   <div>
@@ -27,13 +36,8 @@
   </div>
 
   <div>
-    <%= form.label :type, style: "display: block" %>
-    <%= form.check_box :type %>
-  </div>
-
-  <div>
-    <%= form.label :category_id, style: "display: block" %>
-    <%= form.text_field :category_id %>
+    <%= form.label :date, style: "display: block" %>
+    <%= form.date_field :date %>
   </div>
 
   <div>
