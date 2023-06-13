@@ -12,13 +12,11 @@ class OperationsController < ApplicationController
 
   # GET /operations/new
   def new
-    @category_options = Category.all.map{ |u| [ u.name, u.id ] }
     @operation = Operation.new
   end
 
   # GET /operations/1/edit
   def edit
-    @category_options = Category.all.map{ |u| [ u.name, u.id ] }
   end
 
   # POST /operations or /operations.json

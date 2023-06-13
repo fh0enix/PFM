@@ -13,7 +13,7 @@
 
   <div>
   <label class="form-label">категорія</label>
-    <%= select(:operation, :category_id, @category_options, {}, {class:"form-select"}) %>
+    <%= select(:operation, :category_id, Category.all.map{ |u| [ u.name, u.id ] }, {}, {class:"form-select"}) %>
   </div>
 
   <br>
