@@ -1,10 +1,19 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @operation %>
-
-<div>
-  <%= link_to "редагувати транзакцію", edit_operation_path(@operation) %> |
-  <%= link_to "повернутись до транзакцій", operations_path %>
-
-  <%= button_to "Destroy this operation", @operation, method: :delete %>
+<div class="card text-center">
+  <div class="card-header">
+     <H3 class="card-title"><%= @operation.spend_earn == true ? 'Дохід' : 'Витрата' %></H3>
+    <%= @operation.category[:name] %>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= @operation.description %></h5>
+    <a class=" btn btn-primary disabled btn-lg"><%= @operation.sum %> грн.</a>
+  </div>
+  <div class="card-footer text-muted">
+    <%= @operation.date %>
+  </div>
+  <div>
+    <%= link_to "редагувати", edit_operation_path(@operation), class: "btn btn-secondary" %> <br/><br/>
+    <%= link_to "повернутись", operations_path, class: "btn btn-secondary" %><br/><br/>
+    <%= button_to "видалити", @operation, method: :delete, class: "btn btn-danger" %>
+  </div>
 </div>
+

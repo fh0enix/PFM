@@ -1,14 +1,27 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>категорії</h1>
-
-<div id="categories">
-  <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "показати категорію", category %>
-    </p>
-  <% end %>
+<div>
+  <%= link_to "нова категорія", new_category_path, class: "btn btn-success" %>
 </div>
 
-<%= link_to "нова категорія", new_category_path %>
+<br>
+
+<div class="text-center" id="categories">
+  <table class="table table-striped table-bordered table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">ім'я</th>
+        <th scope="col">опис</th>
+        <th scope="col">управління</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <% @categories.each do |category| %>
+          <%= render category %>
+        <% end %>
+      </tr> 
+    <tbody>   
+  </table>  
+</div>
+
+
+

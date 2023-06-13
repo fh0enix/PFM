@@ -1,12 +1,12 @@
 <div id="<%= dom_id category %>">
-  <p>
-    <strong>ім'я</strong>
-    <%= category.name %>
-  </p>
-
-  <p>
-    <strong>опис</strong>
-    <%= category.description %>
-  </p>
-
+  <tr>
+    <td><%= link_to category.name, category %></td>
+    <td><%= category.description %></td>
+    <td>
+      <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+        <%= link_to "редагувати", edit_category_path(category), class: "btn btn-primary" %>
+        <%= button_to "видалити", category, method: :delete, class: "btn btn-danger" %>
+      </div>
+    </td>
+  </tr>
 </div>

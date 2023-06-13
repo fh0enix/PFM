@@ -1,22 +1,17 @@
 <div id="<%= dom_id operation %>">
-  <p>
-    <strong>категорія:</strong>
-    <%= operation.category.name %>
-  </p>
-  <p>
-    <strong>тип:</strong>
-    <%= operation.spend_earn == true ? 'Дохід' : 'Витрата' %>
-  </p>
-  <p>
-    <strong>сума</strong>
-    <%= operation.sum %>
-  </p>
-  <p>
-    <strong>опис:</strong>
-    <%= operation.description %>
-  </p>
-  <p>
-    <strong>дата</strong>
-    <%= operation.date %>
-  </p>
+    <tr>
+      <td><%= link_to operation.description, operation %></td>
+      <td><%= operation.spend_earn == true ? 'Дохід' : 'Витрата' %></td>
+      <td><%= operation.sum %> грн.</td>
+      <td><%= operation.category.name %></td>
+      <td><%= operation.date %></td>
+      <td>
+        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+          <%= link_to "редагувати", edit_operation_path(operation), class: "btn btn-primary" %>
+          <%= button_to "видалити", operation, method: :delete, class: "btn btn-danger" %>
+        </div>
+      </td>
+    </tr>
 </div>
+
+

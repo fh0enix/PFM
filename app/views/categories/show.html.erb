@@ -1,10 +1,13 @@
-<p style="color: green"><%= notice %></p>
+<div class="card text-center">
+  <div class="card-body">
+    <a class=" btn btn-primary disabled btn-lg"><%= @category.name %></a>
+     <h5 class="card-title"><%= @category.description %></h5>
+  </div>
 
-<%= render @category %>
-
-<div>
-  <%= link_to "редагувати категорію", edit_category_path(@category) %> |
-  <%= link_to "повернутись до категорій", categories_path %>
-
-  <%= button_to "видалити категорію", @category, method: :delete %>
+  <div>
+    <%= link_to "редагувати", edit_category_path(@category), class: "btn btn-secondary" %> <br/><br/>
+    <%= link_to "повернутись", categories_path, class: "btn btn-secondary" %><br/><br/>
+    <%= button_to "видалити", @category, method: :delete, class: "btn btn-danger" %>
+  </div>
 </div>
+

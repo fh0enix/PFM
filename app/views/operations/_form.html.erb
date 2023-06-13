@@ -12,35 +12,43 @@
   <% end %>
 
   <div>
-    <%= select(:operation, :category_id, @category_options) %>
+  <label class="form-label">категорія</label>
+    <%= select(:operation, :category_id, @category_options, {}, {class:"form-select"}) %>
   </div>
+
+  <br>
+
+  <div class="form-check">
+    <%= label :spend_earn, "Витрата", value: true %>
+    <%= form.radio_button :spend_earn, false, :checked => true, :value => false, class: "form-check-input" %>
+  </div>
+  <div class="form-check">
+    <%= label :spend_earn, "Дохід", value: false %>
+    <%= form.radio_button :spend_earn, true, :value => true, class: "form-check-input" %>
+  </div>
+
+  <br>
+
+  <div class="mb-3">
+    <label class="form-label">сума</label>
+    <%= form.text_field :sum, class: "form-control", placeholder: "0.00" %>
+  </div>
+
+  <br>
+
+  <div class="mb-3">
+    <%= form.text_field :description, class: "form-control", placeholder: "опис" %>
+  </div>
+
+    <br>
+
+  <div class="field">
+    <%= form.date_field :date, value: Time.now.strftime('%Y-%m-%d'), class: 'form-control' %>
+  </div>
+
+    <br>
 
   <div>
-    <%= label :spend_earn, "Витрата", value: false %>
-    <%= form.radio_button :spend_earn, false, :checked => true, :value => false %>
-  </div>
-
-    <div>
-    <%= label :spend_earn, "Дохід", value: true %>
-    <%= form.radio_button :spend_earn, true, :value => true %>
-  </div>
-
-  <div>
-    <%= form.label :sum, style: "display: block" %>
-    <%= form.text_field :sum %>
-  </div>
-
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
-  </div>
-
-  <div>
-    <%= form.label :date, style: "display: block" %>
-    <%= form.date_field :date %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <%= form.submit "підтвердити", class: 'btn btn-success' %>
   </div>
 <% end %>

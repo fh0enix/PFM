@@ -1,10 +1,11 @@
-<h1>Editing operation</h1>
+<h1>редагуваня</h1>
 
 <%= render "form", operation: @operation %>
 
 <br>
 
-<div>Show this operation
-  <%= link_to "показати транзакцію", @operation %> |
-  <%= link_to "повернутись до транзакцій", operations_path %>
+<div>
+  <%= link_to "повернутись до транзакцій", operations_path, class: "btn btn-secondary" %>
 </div>
+
+<br>
