@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  get 'reports/index'
+  get "report_category" => "reports#index"
+  get "report_date" => "reports#index"
+  post "report_category" => "reports#report_by_category"
+  post "report_date" => "reports#report_by_date"
   resources :categories
   resources :operations
-  #get 'home/index'
   root "home#index"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
 end

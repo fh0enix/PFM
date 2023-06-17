@@ -1,0 +1,36 @@
+<div class="card text-center">
+  <div class="card-header">
+    <%= params["spend_earn"] == 0 ? 'Дохід' : 'Витрата'%>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Дата з: <%= params["date_from"]%> по: <%= params["date_to"] %></h5>
+    <div>
+    <canvas id="report_date"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      const ctx = document.getElementById('report_date');
+
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: <%= raw @dates %>,
+          datasets: [{
+            label: 'грн',
+            data: <%= raw  @sums %>,
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    </script>
+  </div>
+</div>
