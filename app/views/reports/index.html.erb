@@ -3,38 +3,15 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Звіті по категоріям</h5>
-        <p class="card-text">
-            <br />
+          <p class="card-text">
+          <br>
             <%= form_tag report_category_path do  %>
-                <%= select_tag("id", options_for_select(Category.all.map{ |u| [ u.name, u.id ] }, params[:id]), include_blank: "Всі категорії", class: "form-select") %>
-
-                <br>
-
-                <div class="form-check">
-                    <%= radio_button_tag :spend_earn, 0, true, class: "form-check-input" %>
-                    <%= label :spend_earn, "Витрата", value: false %>
-                </div>
-                <div class="form-check">
-                    <%= radio_button_tag :spend_earn, 1, false, class: "form-check-input" %>
-                    <%= label :spend_earn, "Дохід", value: true %>
-                </div>
-
-                <br>
-
-                <div class="field">
-                    <%= label :date_from, "Дата з:" %>
-                    <%= date_field_tag 'date_from', Date.today, class: 'form-control' %>
-                </div>
-                <div class="field">
-                    <%= label :date_to, "Дата по:" %>
-                    <%= date_field_tag 'date_to', Date.today, class: 'form-control' %>
-                </div>
-            
-                <br>
-
-                <button class="btn btn-primary">Генерувати</button>
+              <%= select_tag("id", options_for_select(Category.all.map{ |u| [ u.name, u.id ] }, params[:id]), include_blank: "Всі категорії", class: "form-select") %>
+              <%= render 'reports/radio_button'%>
+              <%= render 'reports/date_field'%>
+              <button class="btn btn-primary">Генерувати</button>
             <% end %>
-        </p>
+          </p>
       </div>
     </div>
   </div>
@@ -42,39 +19,17 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Звітів по датам</h5>
-        <p class="card-text">
-            <br />
+          <p class="card-text">
+          <br>
             <%= form_tag report_date_path do  %>
-                <select class="form-select" aria-label="Disabled select example" disabled>
-                  <option selected>Всі категорії</option>
-                </select>
-                <br>
-
-                <div class="form-check">
-                    <%= radio_button_tag :spend_earn, 0, true, class: "form-check-input" %>
-                    <%= label :spend_earn, "Витрата", value: false %>
-                </div>
-                <div class="form-check">
-                    <%= radio_button_tag :spend_earn, 1, false, class: "form-check-input" %>
-                    <%= label :spend_earn, "Дохід", value: true %>
-                </div>
-
-              <br>
-
-              <div class="field">
-                  <%= label :date_from, "Дата з:" %>
-                  <%= date_field_tag 'date_from', Date.today, class: 'form-control' %>
-              </div>
-              <div class="field">
-                  <%= label :date_to, "Дата по:" %>
-                  <%= date_field_tag 'date_to', Date.today, class: 'form-control' %>
-              </div>
-            
-              <br>
-
+              <select class="form-select" aria-label="Disabled select example" disabled>
+              <option selected>Всі категорії</option>
+              </select>
+              <%= render 'reports/radio_button'%>
+              <%= render 'reports/date_field'%>
               <button class="btn btn-primary">Генерувати</button>
-          <% end %>
-        </p>
+            <% end %>
+          </p>
       </div>
     </div>
   </div>
