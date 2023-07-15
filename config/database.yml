@@ -24,7 +24,7 @@ production:
   adapter: postgresql
   encoding: unicode
   database: dab4470e043fbde71
-  host: pfm-softserve-db.internal
+  host: pfmsoftserve-db.internal
   pool: 5
   username: postgres
-  password: a9ToOU32bLl6AkV
+  password: NQVEOfi89RoPRxv

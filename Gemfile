@@ -54,7 +54,7 @@ group :development, :test do
 end
 
 group :development do
-  # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem "dockerfile-rails", ">= 1.5"
   gem "web-console"
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
@@ -71,6 +71,6 @@ group :test do
   gem "webdrivers"
 end
 
-gem "dockerfile-rails", ">= 1.5", :group => :development
-
-gem "pg", "~> 1.5"
+group :production do
+  gem "pg", "~> 1.5"
+end
