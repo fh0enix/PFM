@@ -4,12 +4,12 @@ one:
   sum: 1.5
   date: 2023-06-11
   description: MyString
-  type: false
+  spend_earn: false
   category: one
 
 two:
   sum: 1.5
   date: 2023-06-11
   description: MyString
-  type: false
+  spend_earn: false
   category: two
