@@ -27,4 +27,4 @@ production:
   host: pfmsoftserve-db.internal
   pool: 5
   username: postgres
-  password: NQVEOfi89RoPRxv
+  password: <%= ENV['FLYIO_PASS']%>
